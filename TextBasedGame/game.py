@@ -8,7 +8,6 @@ magic="Fire"
 spell=magic+" Bullet"
 
 
-
 def intro():
     print("Hello there!!!")
     t.sleep(0.5)
@@ -41,7 +40,7 @@ def displayQuest(name):
     
 def playQuest():
     global health,reward
-    health=int(100)
+    health = 100
     print("Your Primary Weapon is : ",weapon)
     print("Magic Spell is : ",spell)
     print("To use Any Attack name the attack ")
@@ -57,8 +56,8 @@ def playQuest():
             exit()
 
         t.sleep(0.5)
-        if health<0:
-            health=int(0)
+        if health < 0:
+            health = 0
         print("Enemy health is now ",health)
             
     else:
@@ -68,18 +67,18 @@ def playQuest():
         print("Job Completed")
         t.sleep(0.5)
         print("You Earned a reward")
-        reward=int(50)
+        reward = 50
         t.sleep(0.5)
         print("Your Reward is ",reward)
         
     print("_____________________________________________________________")
 
-ch="Yes"
-while ch=="yes" or ch=="y" or ch=="Y" or ch=="Yes":
+ch = "yes"
+while ch == "yes" or ch == "y":
     choice=intro()
     name=play(choice)
     displayQuest(name)
     playQuest()
-    ch=input("Do you want to play again??(Yes/Y) : ")
+    ch=input("Do you want to play again??(Yes/Y) : ").lower()
 
 
